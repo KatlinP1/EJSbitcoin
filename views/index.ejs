@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>EJS Bitcoin calculator</title>
+</head>
+<body>
+    <h1>EJS Bitcoin calculator</h1>
+    <p>Enter the number of Bitcoins they currently have. <br> Then please select USD or EUR to convert Bitcoins to.</p>
+    <form action="/" method="POST">
+        <input type="text" placeholder="Insert the number of bitcoins" value="<%= amount %>" name="amountBitcoins" ><br><br>
+        BitCoin to:
+        <select name="currency">
+            <option value="USD" <%= currency == 'USD' ? 'selected' : '' %> >US Dollar</option>
+            <option value="EUR" <%= currency == 'EUR' ? 'selected' : '' %>>EU Euros</option>
+        </select>
+        <button type="submit">Convert</button>
+    
+    </form>
+
+    <table>
+        <tr>
+            <th>How many bitcoins you wanted to convert </th>
+            <td><%= amount %></td>
+        </tr>
+        <tr>
+            <th>How much do your bitcoins cost? </th>
+            <td><%= bitcoinPrice %> <%= currency %></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
+
